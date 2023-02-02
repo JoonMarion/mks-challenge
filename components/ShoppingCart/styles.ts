@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { ShoppingCartProps } from '../../interfaces/iShoppingCart';
 
-export const ShoppingCartContainer = styled.div<ShoppingCartProps>`
+export const ShoppingCartContainer = styled.div`
     height: 100vh;
     width: 486px;
     background: #0f52ba;
@@ -10,7 +9,6 @@ export const ShoppingCartContainer = styled.div<ShoppingCartProps>`
     top: 0;
     right: 0;
     z-index: 100;
-    display: ${(props) => (props.open ? 'block' : 'none')};
 `;
 
 export const ShoppingCartHeader = styled.div`

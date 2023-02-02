@@ -1,31 +1,32 @@
-import React, { useState } from 'react';
-import { ShoppingCartProps } from '../../interfaces/iShoppingCart';
+import React, { useContext } from 'react';
 import { ShoppingCartContainer, ShoppingCartHeader, ShoppingCartHeaderText } from './styles';
-import { iProduct } from '../../interfaces/iProduct';
-import { CloseCartButton } from '../OpenCartButton/CloseCartButton';
+import { useAppDispatch, useAppSelector } from '../../hooks/useAppDispatch';
+import { cartState, clearCart } from '../../store/reducers/Cart';
+import { ModalContext } from '../ModalProvider/ModalProvider';
+import CloseCartButton from '../OpenCartButton/CloseCartButton';
 
-export const retrieveDataFromLocalStorage = (): iProduct[] => {
-    const storedData = localStorage.getItem('cart');
-    return storedData ? JSON.parse(storedData) : [];
-};
+const ShoppingCart: React.FC = () => {
+    const dispatch = useAppDispatch();
+    const cart = useAppSelector(cartState);
+    const { isOpen, toggle } = useContext(ModalContext);
 
-const ShoppingCart: React.FC<ShoppingCartProps> = ({ open }) => {
-    const [cart, setCart] = useState<iProduct[]>(retrieveDataFromLocalStorage());
+    function handleFinishShop() {
+        if (cart.items.length !== 0) {
+            dispatch(clearCart());
+            alert('Compra finalizada com sucesso!');
+        } else {
+            alert('Seu carrinho está vazio.');
+        }
+    }
 
-    return (
-        <ShoppingCartContainer open={open}>
+    return isOpen ? (
+        <ShoppingCartContainer>
             <ShoppingCartHeader>
                 <ShoppingCartHeaderText>Carrinho de compras</ShoppingCartHeaderText>
                 <CloseCartButton />
             </ShoppingCartHeader>
-
-            {cart.map((item) => (
-                <p key={item.id}>
-                    {item.name} - {item.price}
-                </p>
-            ))}
         </ShoppingCartContainer>
-    );
+    ) : null;
 };
 
 export default ShoppingCart;

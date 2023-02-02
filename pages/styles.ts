@@ -9,13 +9,3 @@ export const Container = styled.div`
     justify-content: center;
     margin: 2rem 0;
 `;
-
-export const SkeletonWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-
-    flex-wrap: wrap;
-    gap: 22px;
-
-    max-width: 1000px;
-`;

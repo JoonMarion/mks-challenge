@@ -1,13 +1,11 @@
 import { useContext } from 'react';
 import { CloseCart } from './styles';
-import { OpenContext } from '../Navbar/Navbar';
+import { ModalContext } from '../ModalProvider/ModalProvider';
 
-export const CloseCartButton: React.FC = () => {
-    const [open, setOpen] = useContext(OpenContext);
+const CloseCartButton: React.FC = () => {
+    const { toggle } = useContext(ModalContext);
 
-    return (
-        <>
-            <CloseCart onClick={() => setOpen(!open)} />
-        </>
-    );
+    return <CloseCart onClick={toggle} />;
 };
+
+export default CloseCartButton;

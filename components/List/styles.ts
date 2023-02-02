@@ -9,3 +9,13 @@ export const ListContainer = styled.div`
 
     max-width: 1000px;
 `;
+
+export const SkeletonWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    gap: 22px;
+
+    max-width: 1000px;
+`;
