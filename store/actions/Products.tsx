@@ -1,7 +1,7 @@
 import { Dispatch } from 'react';
 import { AnyAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { iApiResponse } from '../../interfaces';
+import { iApiResponse } from '../../interfaces/iProduct';
 import { setProducts } from '../reducers/Products';
 
 export const fetchProducts = () => async (dispatch: Dispatch<AnyAction>) => {
