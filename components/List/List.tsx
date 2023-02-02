@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { iProduct } from '../../interfaces/iProduct';
-import { ListItem } from '../ListItem/ListItem';
+import ListItem from '../ListItem/ListItem';
 import { ListContainer, SkeletonWrapper } from './styles';
 import { fetchProducts } from '../../services/api';
 import Skeleton from '../Skeleton';

@@ -1,9 +1,19 @@
 import React, { useContext } from 'react';
-import { ShoppingCartContainer, ShoppingCartHeader, ShoppingCartHeaderText } from './styles';
+import {
+    ShoppingCartContainer,
+    ShoppingCartHeader,
+    ShoppingCartHeaderText,
+    ShoppingCartItems,
+    ShoppingCartScreen,
+    TotalCart,
+    TotalCartText,
+} from './styles';
 import { useAppDispatch, useAppSelector } from '../../hooks/useAppDispatch';
 import { cartState, clearCart } from '../../store/reducers/Cart';
 import { ModalContext } from '../ModalProvider/ModalProvider';
-import CloseCartButton from '../OpenCartButton/CloseCartButton';
+import CloseCartButton from '../Buttons/OpenCartButton/CloseCartButton';
+import { CartItem } from '../CartItem/CartItem';
+import CheckoutButton from '../Buttons/CheckoutButton/CheckoutButton';
 
 const ShoppingCart: React.FC = () => {
     const dispatch = useAppDispatch();
@@ -20,12 +30,31 @@ const ShoppingCart: React.FC = () => {
     }
 
     return isOpen ? (
-        <ShoppingCartContainer>
-            <ShoppingCartHeader>
-                <ShoppingCartHeaderText>Carrinho de compras</ShoppingCartHeaderText>
-                <CloseCartButton />
-            </ShoppingCartHeader>
-        </ShoppingCartContainer>
+        <ShoppingCartScreen>
+            <ShoppingCartContainer>
+                <ShoppingCartHeader>
+                    <ShoppingCartHeaderText>Carrinho de compras</ShoppingCartHeaderText>
+                    <CloseCartButton />
+                </ShoppingCartHeader>
+
+                <ShoppingCartItems>
+                    {cart.items.length === 0 ? (
+                        <ShoppingCartHeader>
+                            <ShoppingCartHeaderText>Carrinho vazio...</ShoppingCartHeaderText>
+                        </ShoppingCartHeader>
+                    ) : (
+                        cart.items.map((elem) => <CartItem key={elem.id} {...elem} />)
+                    )}
+                </ShoppingCartItems>
+
+                <TotalCart>
+                    <TotalCartText>Total:</TotalCartText>
+                    <TotalCartText>R${cart.total}</TotalCartText>
+                </TotalCart>
+
+                <CheckoutButton />
+            </ShoppingCartContainer>
+        </ShoppingCartScreen>
     ) : null;
 };
 

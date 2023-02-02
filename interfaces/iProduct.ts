@@ -12,4 +12,5 @@ export interface iProduct {
     price: string;
     createdAt?: string;
     updatedAt?: string;
+    qtd?: number;
 }

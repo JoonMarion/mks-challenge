@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+export const ShoppingCartScreen = styled.div`
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+`;
+
 export const ShoppingCartContainer = styled.div`
     height: 100vh;
     width: 486px;
@@ -26,5 +36,28 @@ export const ShoppingCartHeaderText = styled.h1`
     font-size: 27px;
 
     color: #ffffff;
-    width: 180px;
+    width: 230px;
+`;
+
+export const ShoppingCartItems = styled.div`
+    height: 60%;
+    width: 100%;
+    overflow-y: scroll;
+`;
+
+export const TotalCart = styled.div`
+    height: 80px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const TotalCartText = styled.div`
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 15px;
+    color: #ffffff;
+    margin: 0 40px;
 `;

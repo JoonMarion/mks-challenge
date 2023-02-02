@@ -1,6 +1,6 @@
 import { NavbarContainer, NavbarContent, NavbarSmallTitle, NavbarTitle } from './styles';
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
-import OpenCartButton from '../OpenCartButton/OpenCartButton';
+import OpenCartButton from '../Buttons/OpenCartButton/OpenCartButton';
 import { ModalProvider } from '../ModalProvider/ModalProvider';
 
 export const Navbar = () => {
