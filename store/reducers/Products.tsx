@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { iProduct } from '../../interfaces';
+import { iProduct } from '../../interfaces/iProduct';
 
 const INITIAL_STATE: iProduct[] = [];
 
