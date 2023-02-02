@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+const Container = styled.div`
     height: auto;
     min-height: 600px;
     width: 100vw;
@@ -9,3 +9,5 @@ export const Container = styled.div`
     justify-content: center;
     margin: 2rem 0;
 `;
+
+export default Container;
