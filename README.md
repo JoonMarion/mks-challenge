@@ -1,7 +1,7 @@
 ## Desafio Front-End
 Desafio: MKS Desenvolvimento de Sistemas.
 
-## Links do projeto
+## Link do projeto
 - [Projeto no Netlify](https://mks-challenge.netlify.app/)
 
 ## Tecnologias utilizadas
