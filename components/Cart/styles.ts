@@ -76,4 +76,8 @@ export const TotalCart = styled.div`
         color: #ffffff;
         margin: 0 40px;
     }
+
+    @media only screen and (max-width: 486px) {
+        width: 100%;
+    }
 `;
