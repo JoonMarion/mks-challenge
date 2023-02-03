@@ -2,6 +2,7 @@ import { useAppDispatch } from '../../hooks/useAppDispatch';
 import { iProduct } from '../../interfaces/iProduct';
 import { removeProductFromCart, updateProductQuantity } from '../../store/reducers/Cart';
 import { CartItemContainer, CartItemContent, CartItemImage, CartQtdItem, CartQtdItemControl } from './styles';
+import RemoveCartItemButton from '../Buttons/RemoveCartItem/RemoveCartItemButton';
 
 interface ActionRemoveProductProps {
     productId: string;
@@ -26,6 +27,7 @@ export function CartItem(props: iProduct) {
     return (
         <CartItemContainer>
             <CartItemContent>
+                <RemoveCartItemButton props={props} />
                 <CartItemImage src={props.photo} alt={props.name} />
                 <div className="cart-item-title">{props.name}</div>
                 <CartQtdItem>

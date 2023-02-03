@@ -7,7 +7,7 @@ export const ShoppingCartScreen = styled.div`
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 99;
+    z-index: 3;
 `;
 
 export const ShoppingCartContainer = styled.div`
@@ -18,7 +18,7 @@ export const ShoppingCartContainer = styled.div`
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 100;
+    z-index: 4;
 
     @media only screen and (max-width: 486px) {
         width: 100%;
@@ -30,6 +30,7 @@ export const ShoppingCartHeader = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
+    z-index: 2;
 
     .header-text {
         font-family: 'Montserrat';
@@ -60,7 +61,7 @@ export const ShoppingCartItems = styled.div`
 
 export const TotalCart = styled.div`
     height: 15%;
-    width: 100%;
+    width: 486px;
     display: flex;
     justify-content: space-between;
     align-items: center;

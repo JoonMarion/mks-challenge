@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import ShoppingCart from '../ShoppingCart/ShoppingCart';
+import ShoppingCart from '../Cart/Cart';
 
 interface ModalContextType {
     isOpen: boolean;

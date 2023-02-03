@@ -8,6 +8,7 @@ export const CartItemContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin-bottom: 28px;
+    margin-top: 5px;
 `;
 
 export const CartItemContent = styled.div`

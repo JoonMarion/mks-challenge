@@ -3,9 +3,9 @@ import { ShoppingCartContainer, ShoppingCartHeader, ShoppingCartItems, ShoppingC
 import { useAppDispatch, useAppSelector } from '../../hooks/useAppDispatch';
 import { cartState, clearCart } from '../../store/reducers/Cart';
 import { ModalContext } from '../ModalProvider/ModalProvider';
-import CloseCartButton from '../Buttons/OpenCartButton/CloseCartButton';
+import CloseCartButton from '../Buttons/OpenCart/CloseCartButton';
 import { CartItem } from '../CartItem/CartItem';
-import CheckoutButton from '../Buttons/CheckoutButton/CheckoutButton';
+import CheckoutButton from '../Buttons/Checkout/CheckoutButton';
 
 const ShoppingCart: React.FC = () => {
     const dispatch = useAppDispatch();

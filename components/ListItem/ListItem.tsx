@@ -1,7 +1,7 @@
 import { useAppDispatch } from '../../hooks/useAppDispatch';
 import { iProduct } from '../../interfaces/iProduct';
 import { addProductToCart, cartProduct } from '../../store/reducers/Cart';
-import BuyButton from '../Buttons/BuyButton/BuyButton';
+import BuyButton from '../Buttons/Buy/BuyButton';
 import { Card, ProductImageContent, ProductInfo, ProductDescription } from './styles';
 
 interface ActionAddProductProps {
