@@ -4,6 +4,7 @@ export const NavbarContainer = styled.div`
     width: 100vw;
     height: 100px;
     background-color: #0f52ba;
+    position: relative;
 `;
 
 export const NavbarContent = styled.div`
@@ -12,6 +13,10 @@ export const NavbarContent = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-left: 65px;
+
+    @media only screen and (max-width: 500px) {
+        margin-left: 40px;
+    }
 `;
 
 export const NavbarTitle = styled.div`
@@ -24,14 +29,20 @@ export const NavbarTitle = styled.div`
     font-size: 40px;
     line-height: 19px;
     display: flex;
-`;
 
-export const NavbarSmallTitle = styled.p`
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 19px;
+    .small-title {
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 19px;
 
-    height: 30px;
-    display: flex;
-    align-items: end;
+        height: 30px;
+        display: flex;
+        align-items: end;
+    }
+
+    @media only screen and (max-width: 500px) {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 17px;
+    }
 `;

@@ -8,10 +8,13 @@ export const FooterContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-`;
 
-export const FooterContent = styled.div`
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
+    position: relative;
+    bottom: 0;
+
+    .footer-content {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+    }
 `;

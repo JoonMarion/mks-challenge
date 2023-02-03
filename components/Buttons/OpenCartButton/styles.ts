@@ -19,6 +19,12 @@ export const OpenCartContainer = styled.div`
     font-size: 18px;
     line-height: 22px;
     color: #000000;
+
+    @media only screen and (max-width: 500px) {
+        width: 60px;
+        font-size: 14px;
+        margin-right: 40px;
+    }
 `;
 
 export const OpenCartImage = styled.img.attrs(() => ({
@@ -27,6 +33,10 @@ export const OpenCartImage = styled.img.attrs(() => ({
     width: 18px;
     height: 19px;
     margin-right: 10px;
+
+    @media only screen and (max-width: 500px) {
+        width: 14px;
+    }
 `;
 
 export const CloseCart = styled.img.attrs(() => ({

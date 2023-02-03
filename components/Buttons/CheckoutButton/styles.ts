@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const CheckoutButtonContainer = styled.button`
-    width: 100%;
-    height: 97px;
+    width: 486px;
+    height: 87px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    position: absolute;
+    position: fixed;
     bottom: 0;
     cursor: pointer;
 
@@ -18,4 +18,8 @@ export const CheckoutButtonContainer = styled.button`
 
     background: #000000;
     color: #ffffff;
+
+    @media only screen and (max-width: 486px) {
+        width: 100%;
+    }
 `;

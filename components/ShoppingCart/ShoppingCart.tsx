@@ -1,13 +1,5 @@
 import React, { useContext } from 'react';
-import {
-    ShoppingCartContainer,
-    ShoppingCartHeader,
-    ShoppingCartHeaderText,
-    ShoppingCartItems,
-    ShoppingCartScreen,
-    TotalCart,
-    TotalCartText,
-} from './styles';
+import { ShoppingCartContainer, ShoppingCartHeader, ShoppingCartItems, ShoppingCartScreen, TotalCart } from './styles';
 import { useAppDispatch, useAppSelector } from '../../hooks/useAppDispatch';
 import { cartState, clearCart } from '../../store/reducers/Cart';
 import { ModalContext } from '../ModalProvider/ModalProvider';
@@ -20,27 +12,18 @@ const ShoppingCart: React.FC = () => {
     const cart = useAppSelector(cartState);
     const { isOpen, toggle } = useContext(ModalContext);
 
-    function handleFinishShop() {
-        if (cart.items.length !== 0) {
-            dispatch(clearCart());
-            alert('Compra finalizada com sucesso!');
-        } else {
-            alert('Seu carrinho está vazio.');
-        }
-    }
-
     return isOpen ? (
         <ShoppingCartScreen>
             <ShoppingCartContainer>
                 <ShoppingCartHeader>
-                    <ShoppingCartHeaderText>Carrinho de compras</ShoppingCartHeaderText>
+                    <div className="header-text">Carrinho de compras</div>
                     <CloseCartButton />
                 </ShoppingCartHeader>
 
                 <ShoppingCartItems>
                     {cart.items.length === 0 ? (
                         <ShoppingCartHeader>
-                            <ShoppingCartHeaderText>Carrinho vazio...</ShoppingCartHeaderText>
+                            <div className="header-text">Carrinho vazio...</div>
                         </ShoppingCartHeader>
                     ) : (
                         cart.items.map((elem) => <CartItem key={elem.id} {...elem} />)
@@ -48,8 +31,8 @@ const ShoppingCart: React.FC = () => {
                 </ShoppingCartItems>
 
                 <TotalCart>
-                    <TotalCartText>Total:</TotalCartText>
-                    <TotalCartText>R${cart.total}</TotalCartText>
+                    <div className="total-cart-text">Total:</div>
+                    <div className="total-cart-text">R${cart.total}</div>
                 </TotalCart>
 
                 <CheckoutButton />

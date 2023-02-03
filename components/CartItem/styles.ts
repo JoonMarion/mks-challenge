@@ -21,28 +21,49 @@ export const CartItemContent = styled.div`
     background: #ffffff;
     box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
+
+    .cart-item-title {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 17px;
+        color: #2c2c2c;
+        width: 30%;
+    }
+
+    .cart-item-price {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: #000000;
+        width: 20%;
+        margin: 0 10px;
+    }
+
+    @media only screen and (max-width: 400px) {
+        width: 300px;
+    }
 `;
 
 export const CartItemImage = styled.img`
-    width: 55px;
-`;
-
-export const CartItemName = styled.div`
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 17px;
-    color: #2c2c2c;
-    width: 115px;
+    width: 20%;
+    margin: 0 10px;
 `;
 
 export const CartQtdItem = styled.div`
     display: flex;
+    align-items: center;
     flex-direction: column;
-    width: 50px;
+    margin-bottom: 10px;
 
     font-weight: 400;
     font-size: 7px;
     line-height: 8px;
+    width: 30%;
+
+    .qtd-text {
+        width: 50px;
+        text-align: left;
+    }
 `;
 
 export const CartQtdItemControl = styled.div`
@@ -56,6 +77,7 @@ export const CartQtdItemControl = styled.div`
 
     width: 100%;
     height: 19px;
+    width: 50px;
     font-size: 10px;
 
     .control-button {
@@ -63,11 +85,4 @@ export const CartQtdItemControl = styled.div`
         cursor: pointer;
         background: none;
     }
-`;
-
-export const CartItemPrice = styled.div`
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    color: #000000;
 `;

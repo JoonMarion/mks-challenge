@@ -2,16 +2,7 @@ import { useAppDispatch } from '../../hooks/useAppDispatch';
 import { iProduct } from '../../interfaces/iProduct';
 import { addProductToCart, cartProduct } from '../../store/reducers/Cart';
 import BuyButton from '../Buttons/BuyButton/BuyButton';
-import {
-    Card,
-    ProductImage,
-    ProductImageContent,
-    ProductInfo,
-    ProductName,
-    ProductPrice,
-    ProductDescription,
-    DescriptionText,
-} from './styles';
+import { Card, ProductImageContent, ProductInfo, ProductDescription } from './styles';
 
 interface ActionAddProductProps {
     product: cartProduct;
@@ -28,16 +19,16 @@ export default function ListItem(props: iProduct) {
     return (
         <Card>
             <ProductImageContent>
-                <ProductImage src={props.photo} alt={props.name} />
+                <img className="card-list-img" src={props.photo} alt={props.name} />
             </ProductImageContent>
 
             <ProductInfo>
-                <ProductName>{props.name}</ProductName>
-                <ProductPrice>R${props.price.replace(/(^0+(?=\d))|(.?0+$)/g, '')}</ProductPrice>
+                <div className="product-info-name">{props.name}</div>
+                <div className="product-info-price">R${props.price.replace(/(^0+(?=\d))|(.?0+$)/g, '')}</div>
             </ProductInfo>
 
             <ProductDescription>
-                <DescriptionText>{props.description}</DescriptionText>
+                <div className="product-description-text">{props.description}</div>
             </ProductDescription>
 
             <BuyButton onClick={() => handleAddProduct({ product: { ...props, qtd: 1 }, quantity: 1 })} />
